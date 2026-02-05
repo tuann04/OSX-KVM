@@ -68,7 +68,7 @@ args=(
   -device virtserialport,chardev=vdagent,name=com.redhat.spice.0
   -spice port=5900,addr=127.0.0.1,disable-ticketing=on
   -monitor stdio
-  -device qxl-vga,xres=1920,yres=1200
+  -device qxl-vga,xres=2560,yres=1600
   -display spice-app
 )
 
