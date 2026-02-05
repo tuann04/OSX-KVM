@@ -1101,7 +1101,7 @@
 				<key>boot-args</key>
 				<string>keepsyms=1 -v revpatch=sbvmm</string>
 				<key>csr-active-config</key>
-				<data>AAAAAA==</data>
+				<data>fwgAAA==</data>
 				<key>prev-lang:kbd</key>
 				<data>ZW4tVVM6MA==</data>
 				<key>run-efi-updater</key>
@@ -1383,7 +1383,7 @@
 			<key>ReplaceTabWithSpace</key>
 			<false/>
 			<key>Resolution</key>
-			<string>1920x1080</string>
+			<string>2560x1440</string>
 			<key>SanitiseClearScreen</key>
 			<false/>
 			<key>TextRenderer</key>

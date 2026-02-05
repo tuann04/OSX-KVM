@@ -50,7 +50,7 @@ args=(
   # -device usb-host,vendorid=0x1b3f,productid=0x2008  # Another 2 USD USB Sound Card
   -device isa-applesmc,osk="ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
   -drive if=pflash,format=raw,readonly=on,file="$REPO_PATH/$OVMF_DIR/OVMF_CODE_4M.fd"
-  -drive if=pflash,format=raw,file="$REPO_PATH/$OVMF_DIR/OVMF_VARS-1920x1080.fd"
+  -drive if=pflash,format=raw,file="$REPO_PATH/$OVMF_DIR/OVMF_VARS.fd"
   -smbios type=2
   -device ich9-intel-hda -device hda-duplex
   -device ich9-ahci,id=sata
@@ -64,8 +64,7 @@ args=(
   -netdev user,id=net0,hostfwd=tcp::2222-:22 -device virtio-net-pci,netdev=net0,id=net0,mac=52:54:00:c9:18:27
   # -netdev user,id=net0 -device vmxnet3,netdev=net0,id=net0,mac=52:54:00:c9:18:27  # Note: Use this line for High Sierra
   -monitor stdio
-  -vga none
-  -device virtio-vga,id=video0,max_outputs=1
+  -device qxl-vga,xres=2560,yres=1440
 )
 
 qemu-system-x86_64 "${args[@]}"
