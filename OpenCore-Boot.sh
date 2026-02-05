@@ -63,8 +63,13 @@ args=(
   # -netdev tap,id=net0,ifname=tap0,script=no,downscript=no -device virtio-net-pci,netdev=net0,id=net0,mac=52:54:00:c9:18:27
   -netdev user,id=net0,hostfwd=tcp::2222-:22 -device virtio-net-pci,netdev=net0,id=net0,mac=52:54:00:c9:18:27
   # -netdev user,id=net0 -device vmxnet3,netdev=net0,id=net0,mac=52:54:00:c9:18:27  # Note: Use this line for High Sierra
+  -device virtio-serial-pci
+  -chardev spicevmc,id=vdagent,name=vdagent
+  -device virtserialport,chardev=vdagent,name=com.redhat.spice.0
+  -spice port=5900,addr=127.0.0.1,disable-ticketing=on
   -monitor stdio
   -device qxl-vga,xres=2560,yres=1440
+  -display spice-app
 )
 
 qemu-system-x86_64 "${args[@]}"
